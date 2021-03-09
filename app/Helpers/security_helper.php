@@ -45,13 +45,17 @@
         $encryption_iv = str_repeat(chr(0), 16);
         $encryption_way = env("encryption.way", null);
 
-        foreach($encrypted_array as $encrypted_row) {
-            $text_array = array();
-            foreach($encrypted_row as $key => $value) {
-                $encrypted = base64_decode($value);
-                $text_array[$key] = openssl_decrypt($encrypted, $encryption_way, $encryption_key, true, $encryption_iv); // 복호화
+        if(isset($encrypted_row) == true) {
+            foreach($encrypted_array as $encrypted_row) {
+                if(isset($encrypted_row) == true) {
+                    $text_array = array();
+                    foreach($encrypted_row as $key => $value) {
+                        $encrypted = base64_decode($value);
+                        $text_array[$key] = openssl_decrypt($encrypted, $encryption_way, $encryption_key, true, $encryption_iv); // 복호화
+                    }
+                }
+                $return[] = $text_array;
             }
-            $return[] = $text_array;
         }
 
         return $return;
@@ -69,11 +73,12 @@
         $encryption_iv = str_repeat(chr(0), 16);
         $encryption_way = env("encryption.way", null);
 
-        foreach($encrypted_row as $key => $value) {
-            $encrypted = base64_decode($value);
-            $return[$key] = openssl_decrypt($encrypted, $encryption_way, $encryption_key, true, $encryption_iv); // 복호화
+        if(isset($encrypted_array) == true) {
+            foreach($encrypted_array as $key => $value) {
+                $encrypted = base64_decode($value);
+                $return[$key] = openssl_decrypt($encrypted, $encryption_way, $encryption_key, true, $encryption_iv); // 복호화
+            }
         }
-
         return $return;
     }
 ?>
