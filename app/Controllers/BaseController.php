@@ -40,6 +40,7 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
+		helper(["security"]); // 보안관련
 		// $this->session = \Config\Services::session();
 	}
 
