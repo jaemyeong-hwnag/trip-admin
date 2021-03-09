@@ -27,6 +27,7 @@ class BaseController extends Controller
 	 * @var array
 	 */
 	protected $helpers = [];
+	protected $session = [];
 
 	/**
 	 * Constructor.
@@ -41,7 +42,7 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// E.g.:
 		helper(["security"]); // 보안관련
-		// $this->session = \Config\Services::session();
+		$this->session = \Config\Services::session();
 	}
 
 }
