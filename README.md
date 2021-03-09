@@ -6,6 +6,11 @@
 
 사이트 주소 : http://trip-admin.trun.ml/
 
+## 버전 정보
+* PHP : 7.4.10
+* DB : 10.5.5-MariaDB
+* CI4(CodeIgniter4) : 4.0.4
+
 ## CodeIgniter4 기본 설명
  - /app
    - /Config : 구성 파일 저장
