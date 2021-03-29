@@ -26,3 +26,8 @@
  - /system : 이 디렉토리는 프레임워크 자체를 구성하는 파일을 저장합니다. 디렉토리의 파일은 절대 수정해서는 안됩니다.
  - /public : CSS, javascript 또는 이미지와 같이 추가한 모든 어플리케이션 자산이 포함됩니다. 이 폴더는 사이트의 “웹 루트(web root)”를 의미
  - /writable : 캐시 파일, 로그 및 사용자가 업로드한 데이터를 저장하기 위한 디렉터리가 포함
+
+## 회원 비밀번호 암호화
+ - /.env 파일에 암호화 정보 저장
+ - /app/Helpers/security_helper.php 암복호화 함수
+ - /app/Controllers/BaseController.php에 보안관련 헬퍼 불러오기
